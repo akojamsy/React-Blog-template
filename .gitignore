@@ -1,6 +1,6 @@
 /node_modules
 /build
-
+/dev
 .Ds_Store
 
 npm-debug.log
