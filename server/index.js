@@ -16,6 +16,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cookieParser())
 
+app.get('/', (req, res) => {
+  res.json({
+    message: "Hello, i have been sucessfully deployed...!"
+  })
+})
+
 app.get('/api/user/auth', auth, (req, res) => {
   res.status(200).json({
     _id: req._id,
@@ -80,6 +86,6 @@ app.get('/api/user/logout', auth, (req, res) => {
 
 const port = process.env.PORT || 5000
 
-app.listen(port, ()=>{
+app.listen(port, () => {
   console.log(`Server is running at ${port} `)
 })
